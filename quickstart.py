@@ -1,23 +1,20 @@
 from instapy import InstaPy
+import os
 
 # Write your automation here
 # Stuck ? Look at the github page or the examples in the examples folder
 
-dont_like = ['food', 'girl', 'hot']
-ignore_words = ['pizza']
 friend_list = ['friend1', 'friend2', 'friend3']
-
+like_list = ['#design', '#fashionillustration', '#illustration', '#fashionweek', '#textiles', '#patterndesign', '#art', '#fashiondesign', '#illustrator', '#Fashionillustrator', '#creativedirector', '#artdirection',  '#pattern', '#designer', '#creative', '#textiledesigner', '#DIGITALART', '#illustrationoftheday', '#fashionblogger']
 # If you want to enter your Instagram Credentials directly just enter
 # username=<your-username-here> and password=<your-password> into InstaPy
 # e.g like so InstaPy(username="instagram", password="test1234")
 
-InstaPy()\
+InstaPy())\
   .login()\
-  .set_upper_follower_count(limit = 2500) \
-  .set_do_comment(True, percentage=10) \
-  .set_comments(['Cool!', 'Awesome!', 'Nice!']) \
-  .set_dont_include(friend_list) \
-  .set_dont_like(dont_like) \
-  .set_ignore_if_contains(ignore_words) \
-  .like_by_tags(['dog', '#cat'], amount=100) \
+  .set_upper_follower_count(limit = 3000) \
+  .set_lower_follower_count(limit = 200) \
+  .set_do_comment(True, percentage=1) \
+  .set_comments(['so great!' 'love it!']) \
+  .like_by_tags(like_list, amount=100) \
   .end()
